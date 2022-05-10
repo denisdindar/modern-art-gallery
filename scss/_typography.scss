@@ -1,0 +1,38 @@
+/* Typography */
+html {
+  /* 10px - 1rem */
+  font-size: 62.5%;
+}
+
+body {
+  @include font($font-body, 300, 2.2rem, $line-height: 3.2rem);
+  color: $color-dark-gray;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include font($font-heading, 900);
+  color: $color-black;
+}
+
+// Use mixin:@include heading($font-size, $line-height)
+.heading {
+  &-xl {
+    @include text-sizes(9.6rem, 8.8rem);
+  }
+  &-lg {
+    @include text-sizes(7rem, 7rem);
+  }
+  &-md {
+    @include text-sizes(6rem, 5rem);
+  }
+  &-sm {
+    @include text-sizes(3.6rem, 3.8rem);
+  }
+}
+
+.text-sm {
+  @include text-sizes(1.8rem, 2.8rem);
+}

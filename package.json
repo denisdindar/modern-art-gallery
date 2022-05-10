@@ -1,7 +1,7 @@
 {
-  "name": "loop-studios",
+  "name": "modern-art-gallery",
   "version": "1.0.0",
-  "description": "Converting design to HTML",
+  "description": "Customize and develop the design",
   "browserslist": "last 10 versions",
   "main": "index.js",
   "scripts": {

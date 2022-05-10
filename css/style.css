@@ -1,5 +1,122 @@
+/* CSS VARIABLES */
+:root {
+  /* Font Family */
+  --font-heading: "Big Shoulders Display", cursive;
+  --font-body: "Outfit", sans-serif;
+  /* Colors */
+  --color-primary: rgb(213, 150, 108);
+  --color-black: rgb(21, 21, 21);
+  --color-white: rgb(255, 255, 255);
+  --color-dark-gray: rgb(68, 68, 68);
+}
+
+/* Global Settings */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-white);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* Remove bullets from lists */
+ul,
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  /* cursor: pointer; */
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+}
+
+/* Reduce Animation depends on user choises */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Typography */
+html {
+  /* 10px - 1rem */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  color: var(--color-dark-gray);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  color: var(--color-black);
+}
+
+.heading-xl {
+  font-size: 9.6rem;
+  line-height: 8.8rem;
+}
+.heading-lg {
+  font-size: 7rem;
+  line-height: 7rem;
+}
+.heading-md {
+  font-size: 6rem;
+  line-height: 5rem;
+}
+.heading-sm {
+  font-size: 3.6rem;
+  line-height: 3.8rem;
+}
+
+.text-sm {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+/* General Layout*/

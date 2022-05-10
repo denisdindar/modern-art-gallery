@@ -1,0 +1,14 @@
+//  Quick font mixin
+@mixin font($family, $weight, $size: null, $spacing: null, $line-height: null) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  letter-spacing: $spacing;
+  line-height: $line-height;
+}
+
+// Custom text sizes
+@mixin text-sizes($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}

@@ -1,0 +1,22 @@
+//CSS VARIABLES
+/* CSS VARIABLES */
+:root {
+  /* Font Family */
+  --font-heading: "Big Shoulders Display", cursive;
+  --font-body: "Outfit", sans-serif;
+  /* Colors */
+  --color-primary: rgb(213, 150, 108);
+  --color-black: rgb(21, 21, 21);
+  --color-white: rgb(255, 255, 255);
+  --color-dark-gray: rgb(68, 68, 68);
+}
+
+// SASS VARIABLES
+// Font Family
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
+// Colors
+$color-primary: var(--color-primary);
+$color-black: var(--color-black);
+$color-dark-gray: var(--color-dark-gray);
+$color-white: var(--color-white);
