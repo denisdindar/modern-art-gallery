@@ -4,17 +4,29 @@
   /* Font Family */
   --font-heading: "Big Shoulders Display", cursive;
   --font-body: "Outfit", sans-serif;
+
   /* Colors */
   --color-primary: rgb(213, 150, 108);
   --color-black: rgb(21, 21, 21);
   --color-white: rgb(255, 255, 255);
   --color-dark-gray: rgb(68, 68, 68);
+
+  /* Horizontal Spacing of Container */
+  --space-x-lg: 16.5rem;
+  --space-x-md: 3.9rem;
+  --space-x-sm: 1.6rem;
+
+  /* Vertical Space between Sections Y */
+  --space-y-lg: 16.5rem;
+  --space-y-md: 3.9rem;
+  --space-y-sm: 1.6rem;
 }
 
 // SASS VARIABLES
 // Font Family
 $font-heading: var(--font-heading);
 $font-body: var(--font-body);
+
 // Colors
 $color-primary: var(--color-primary);
 $color-black: var(--color-black);

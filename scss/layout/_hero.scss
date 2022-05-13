@@ -1,0 +1,36 @@
+.hero {
+  max-width: 144rem;
+  height: 80rem;
+  margin: 0 auto;
+  background: linear-gradient(90deg, $color-black 50%, $color-white 50%);
+  background-position: left;
+  position: relative;
+
+  &-content {
+    position: absolute;
+    // WIDTH = 1440px - margin right and left
+    width: 111rem;
+    z-index: 1;
+    margin: 19rem var(--space-x-lg);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-image {
+    max-width: 54rem;
+    height: 80rem;
+    transform: translateX(45rem);
+  }
+
+  &-title {
+    max-width: 51rem;
+    color: $color-white;
+    background: linear-gradient(90deg, $color-white 63%, $color-black 0%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-caption {
+    max-width: 35rem;
+  }
+}

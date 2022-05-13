@@ -15,6 +15,24 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+p {
+  display: block;
+}
+
+/* Default Link Styles */
+a:link,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+/* Normalize bold text */
+b,
+strong {
+  font-weight: bolder;
+}
+
 /* Remove bullets from lists */
 ul,
 ul[role="list"],
@@ -36,14 +54,27 @@ select {
   font: inherit;
 }
 
-button {
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   background: none;
   border: 0;
   font: inherit;
   color: inherit;
-  /* cursor: pointer; */
+  cursor: pointer;
   line-height: normal;
   overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+}
+
+/* Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
   padding: 0;
 }
 

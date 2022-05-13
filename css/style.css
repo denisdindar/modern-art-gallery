@@ -8,6 +8,14 @@
   --color-black: rgb(21, 21, 21);
   --color-white: rgb(255, 255, 255);
   --color-dark-gray: rgb(68, 68, 68);
+  /* Horizontal Spacing of Container */
+  --space-x-lg: 16.5rem;
+  --space-x-md: 3.9rem;
+  --space-x-sm: 1.6rem;
+  /* Vertical Space between Sections Y */
+  --space-y-lg: 16.5rem;
+  --space-y-md: 3.9rem;
+  --space-y-sm: 1.6rem;
 }
 
 /* Global Settings */
@@ -25,6 +33,24 @@ body {
   background-color: var(--color-white);
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+}
+
+p {
+  display: block;
+}
+
+/* Default Link Styles */
+a:link,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+/* Normalize bold text */
+b,
+strong {
+  font-weight: bolder;
 }
 
 /* Remove bullets from lists */
@@ -48,14 +74,27 @@ select {
   font: inherit;
 }
 
-button {
+button,
+[type=button],
+[type=reset],
+[type=submit] {
   background: none;
   border: 0;
   font: inherit;
   color: inherit;
-  /* cursor: pointer; */
+  cursor: pointer;
   line-height: normal;
   overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+}
+
+/* Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
   padding: 0;
 }
 
@@ -95,6 +134,7 @@ h4 {
   font-family: var(--font-heading);
   font-weight: 900;
   color: var(--color-black);
+  text-transform: uppercase;
 }
 
 .heading-xl {
@@ -119,4 +159,73 @@ h4 {
   line-height: 2.8rem;
 }
 
-/* General Layout*/
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+.hero {
+  max-width: 144rem;
+  height: 80rem;
+  margin: 0 auto;
+  background: linear-gradient(90deg, var(--color-black) 50%, var(--color-white) 50%);
+  background-position: left;
+  position: relative;
+}
+.hero-content {
+  position: absolute;
+  width: 111rem;
+  z-index: 1;
+  margin: 19rem var(--space-x-lg);
+  display: flex;
+  justify-content: space-between;
+}
+.hero-image {
+  max-width: 54rem;
+  height: 80rem;
+  transform: translateX(45rem);
+}
+.hero-title {
+  max-width: 51rem;
+  color: var(--color-white);
+  background: linear-gradient(90deg, var(--color-white) 63%, var(--color-black) 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-caption {
+  max-width: 35rem;
+}
+
+/* Button Component */
+.btn {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.37rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding: 2.6rem 3.2rem;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.35s;
+  margin-top: 6rem;
+}
+.btn::after {
+  content: url(../../images/icon-arrow-right.svg);
+  position: absolute;
+  top: 0;
+  right: -5.6rem;
+  width: 8px;
+  height: 24px;
+  background-color: var(--color-primary);
+  padding: 2.6rem 2.4rem;
+  transition: background-color 0.35s;
+}
+.btn:hover {
+  background-color: var(--color-primary);
+}
+.btn:hover::after {
+  background-color: var(--color-black);
+}

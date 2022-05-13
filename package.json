@@ -9,7 +9,7 @@
     "compile-sass": "sass --no-source-map scss/main.scss css/main.css",
     "prefix-css": "postcss css/main.css --use autoprefixer -o css/style.css  --no-map",
     "liveserver": "live-server",
-    "start": "npm-run-all --parallel liveserver watch-sass",
+    "start": "npm run watch-sass",
     "build": "npm-run-all compile-sass prefix-css"
   },
   "author": "Denis Dindar.",
