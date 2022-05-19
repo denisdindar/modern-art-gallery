@@ -1,9 +1,17 @@
+// Abstract
 @import "abstract/mixins";
 @import "abstract/variables";
+
+// Base & Typography
 @import "base/base";
 @import "base/typography";
+
+// Layout & Sections
 @import "layout/layout";
 @import "layout/hero";
+@import "layout/gallery";
+@import "layout/location";
+@import "layout/footer";
 
 // Components
 @import "components/button";

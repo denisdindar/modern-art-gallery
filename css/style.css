@@ -31,8 +31,10 @@ html:focus-within {
 
 body {
   background-color: var(--color-white);
+  width: 100%;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  overflow-x: hidden;
 }
 
 p {
@@ -42,6 +44,7 @@ p {
 /* Default Link Styles */
 a:link,
 a:visited,
+a:active,
 a:hover,
 a:focus {
   text-decoration: none;
@@ -147,7 +150,7 @@ h4 {
 }
 .heading-md {
   font-size: 6rem;
-  line-height: 5rem;
+  line-height: 6rem;
 }
 .heading-sm {
   font-size: 3.6rem;
@@ -159,36 +162,47 @@ h4 {
   line-height: 2.8rem;
 }
 
+/* General Layout Rules */
 .container {
   max-width: 144rem;
   margin: 0 auto;
 }
-
-.hero {
-  max-width: 144rem;
-  height: 80rem;
-  margin: 0 auto;
-  background: linear-gradient(90deg, var(--color-black) 50%, var(--color-white) 50%);
-  background-position: left;
-  position: relative;
+.container-inner {
+  max-width: 100%;
+  margin: 0 var(--space-x-lg);
 }
-.hero-content {
-  position: absolute;
-  width: 111rem;
-  z-index: 1;
-  margin: 19rem var(--space-x-lg);
+
+section {
+  margin-bottom: var(--space-y-lg);
+}
+
+/* Section: Hero */
+.hero {
+  width: 100%;
+  min-height: 80rem;
+  background: linear-gradient(90deg, var(--color-black) 50%, transparent 0%);
+}
+.hero-inner {
   display: flex;
-  justify-content: space-between;
+  place-content: center;
+  position: relative;
+  max-width: 100%;
+  margin: 0 var(--space-x-lg);
 }
 .hero-image {
   max-width: 54rem;
-  height: 80rem;
-  transform: translateX(45rem);
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  margin-top: 19rem;
 }
 .hero-title {
-  max-width: 51rem;
   color: var(--color-white);
   background: linear-gradient(90deg, var(--color-white) 63%, var(--color-black) 0%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -196,9 +210,102 @@ h4 {
   max-width: 35rem;
 }
 
+/* Section: Gallery */
+.gallery {
+  --gap: 3rem;
+  width: calc(100% - var(--gap));
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.gallery-box-white {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+  max-width: 35rem;
+}
+.gallery-box-black {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 6.5rem 4.8rem;
+}
+.gallery-box-black h2 {
+  color: var(--color-white);
+}
+.gallery-box-rb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: calc(44.5rem - var(--gap));
+}
+.gallery-img-1, .gallery-img-2 {
+  max-width: 63.5rem;
+}
+
+/* Section: Location */
+.location {
+  background-color: var(--color-black);
+  margin-bottom: 0;
+}
+.location-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 var(--space-x-lg);
+  padding: 10rem 0;
+}
+.location-title {
+  max-width: 30rem;
+  color: var(--color-white);
+}
+.location-adress {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 54rem;
+  color: var(--color-white);
+}
+.location-adress-street {
+  color: var(--color-primary) !important;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  background-color: var(--color-primary);
+  max-width: 100%;
+  padding: 8rem 16.5rem;
+}
+
+.footer-logo {
+  max-width: 16rem;
+  height: 5.8rem;
+}
+.footer-info {
+  max-width: 43rem;
+  color: var(--color-black);
+}
+.footer-social {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  min-width: 10rem;
+}
+.footer-social-link {
+  width: 2rem;
+}
+
 /* Button Component */
 .btn {
   display: block;
+  position: relative;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 2rem;
@@ -207,18 +314,18 @@ h4 {
   color: var(--color-white);
   text-transform: uppercase;
   padding: 2.6rem 3.2rem;
-  position: relative;
+  margin-top: 6rem;
   cursor: pointer;
   transition: background-color 0.35s;
-  margin-top: 6rem;
 }
 .btn::after {
-  content: url(../../images/icon-arrow-right.svg);
+  content: "";
   position: absolute;
+  width: 0.8rem;
+  height: 2.4rem;
   top: 0;
   right: -5.6rem;
-  width: 8px;
-  height: 24px;
+  content: url(../../images/icon-arrow-right.svg);
   background-color: var(--color-primary);
   padding: 2.6rem 2.4rem;
   transition: background-color 0.35s;

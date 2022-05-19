@@ -25,34 +25,158 @@
   </head>
   <body>
     <div class="container">
+      <!-- HERO SECTION -->
       <section class="hero">
-        <div class="hero-content">
-          <h1 class="hero-title heading-xl">
-            modern
-            <br />
-            art gallery
-          </h1>
-          <div class="hero-caption">
-            The arts in the collection of the Modern Art Gallery all started
-            from a spark of inspiration. Will these pieces inspire you? Visit us
-            and find out.
-
-            <a href="#location">
-              <button type="button" class="btn">our location</button>
-            </a>
+        <div class="hero-inner">
+          <img
+            class="hero-image"
+            alt="modern art gallery"
+            srcset="
+              images/mobile/image-hero.jpg   480w,
+              images/tablet/image-hero.jpg   720w,
+              images/desktop/image-hero.jpg 1280w
+            "
+            src="./images/desktop/image-hero.jpg"
+          />
+          <div class="hero-content">
+            <h1 class="hero-title heading-xl">
+              modern
+              <br />
+              art gallery
+            </h1>
+            <div class="hero-caption">
+              <p>
+                The arts in the collection of the Modern Art Gallery all started
+                from a spark of inspiration. Will these pieces inspire you?
+                Visit us and find out...
+              </p>
+              <a href="#location">
+                <button type="button" class="btn">our location</button>
+              </a>
+            </div>
           </div>
         </div>
-        <img
-          class="hero-image"
-          alt="modern art gallery"
-          srcset="
-            images/mobile/image-hero.jpg   480w,
-            images/tablet/image-hero.jpg   720w,
-            images/desktop/image-hero.jpg 1280w
-          "
-          src="./images/desktop/image-hero.jpg"
-        />
       </section>
+      <main>
+        <div class="container-inner">
+          <!-- GALLERY SECTION -->
+          <section class="gallery">
+            <!-- 1. Heading and text in white space -->
+            <div class="gallery-box-white">
+              <h2 class="heading-md">Your Day at the Gallery</h2>
+              <p>
+                Wander through our distinct collections and find new insights
+                about our artists. Dive into the details of their creative
+                process.
+              </p>
+            </div>
+            <!-- 2. First image on right -->
+            <img
+              class="gallery-img-1"
+              alt="a view of art gallery"
+              srcset="
+                images/mobile/image-grid-1.jpg   480w,
+                images/tablet/image-grid-1.jpg   720w,
+                images/desktop/image-grid-1.jpg 1280w
+              "
+              src="./images/desktop/image-grid-1.jpg"
+            />
+            <!-- 3. Second vertical image on left bottom -->
+            <img
+              class="gallery-img-2"
+              alt="a view of art gallery"
+              srcset="
+                images/mobile/image-grid-2.jpg   480w,
+                images/tablet/image-grid-2.jpg   720w,
+                images/desktop/image-grid-2.jpg 1280w
+              "
+              src="./images/desktop/image-grid-2.jpg"
+            />
+
+            <!-- 4. Right Block Container with vertical image and text -->
+            <div class="gallery-box-rb">
+              <!-- 4.1 Image -->
+              <img
+                class="gallery-img-3"
+                alt="a view of art gallery"
+                srcset="
+                  images/mobile/image-grid-3.jpg   480w,
+                  images/tablet/image-grid-3.jpg   720w,
+                  images/desktop/image-grid-3.jpg 1280w
+                "
+                src="./images/desktop/image-grid-3.jpg"
+              />
+              <!-- 4.2 Black Text Box -->
+              <div class="gallery-box-black">
+                <h2 class="heading-md">Come & Be Inspired</h2>
+                <p>
+                  We’re excited to welcome you to our gallery and see how our
+                  collections influence you.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- GOOGLE MAP by Snazzy Maps -->
+        <iframe
+          src="https://snazzymaps.com/embed/395302"
+          width="100%"
+          height="400px"
+          style="border: none"
+        ></iframe>
+
+        <!-- LOCATION SECTION -->
+        <section class="location">
+          <div class="location-inner">
+            <h2 class="location-title heading-md">our location</h2>
+            <div class="location-adress">
+              <h4 class="location-adress-street heading-sm">99 King Street</h4>
+              <p class="location-address-city">
+                Newport
+                <br />
+                RI 02840
+                <br />
+                United States of America
+              </p>
+              <p class="location-address-info">
+                Our newly opened gallery is located near the Edward King House
+                on 99 King Street, the Modern Art Gallery is free to all
+                visitors and open seven days a week from 8am to 9pm.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <img
+          src="./images/logo.svg"
+          alt="Modern Art Gallery"
+          class="footer-logo"
+        />
+        <p class="footer-info text-sm">
+          The Modern Art Gallery is free to all visitors and open seven days a
+          week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+        </p>
+        <div class="footer-social">
+          <img
+            src="./images/icon-facebook.svg"
+            alt="Facebook"
+            class="footer-social-link"
+          />
+          <img
+            src="./images/icon-instagram.svg"
+            alt="Instagram"
+            class="footer-social-link"
+          />
+          <img
+            src="./images/icon-twitter.svg"
+            alt="Twitter"
+            class="footer-social-link"
+          />
+        </div>
+      </footer>
     </div>
 
     <!-- JS for mobile toggle menu -->

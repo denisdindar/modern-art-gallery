@@ -12,3 +12,57 @@
   font-size: $font-size;
   line-height: $line-height;
 }
+
+// Flexbox
+// $placeContent values: Vertical Horizontal or one value for both
+// @include flex(row, center, end) or (start end) = Right Top
+@mixin flex(
+  $direction: null,
+  $placeContent: null,
+  $justify: null,
+  $align: null,
+  $wrap: null,
+  $gap: null
+) {
+  display: flex;
+  flex-direction: $direction;
+
+  @if $placeContent == null {
+    @if $justify {
+      justify-content: $justify;
+    }
+    @if $align {
+      align-items: $align;
+    }
+  } @else {
+    place-content: $placeContent;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+// Pseudo Elements Defaults ::before and ::after
+@mixin pseudo($w: null, $h: null, $t: null, $r: null, $b: null, $l: null) {
+  content: "";
+  position: absolute;
+  width: $w;
+  height: $h;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
+// Positioning (static, fixed, absolute)
+@mixin pos($position: null, $t: null, $r: null, $b: null, $l: null, $z: null) {
+  position: $position;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  z-index: $z;
+}

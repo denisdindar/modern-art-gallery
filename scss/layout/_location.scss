@@ -1,0 +1,27 @@
+/* Section: Location */
+.location {
+  background-color: $color-black;
+  margin-bottom: 0;
+
+  &-inner {
+    @include flex($justify: space-between);
+    max-width: 100%;
+    margin: 0 var(--space-x-lg);
+    padding: 10rem 0;
+  }
+
+  &-title {
+    max-width: 30rem;
+    color: $color-white;
+  }
+
+  &-adress {
+    @include flex(column, $gap: 3rem);
+    max-width: 54rem;
+    color: $color-white;
+
+    &-street {
+      color: $color-primary !important;
+    }
+  }
+}

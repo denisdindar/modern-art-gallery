@@ -11,8 +11,10 @@ html:focus-within {
 
 body {
   background-color: $color-white;
+  width: 100%;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  overflow-x: hidden;
 }
 
 p {
@@ -22,6 +24,7 @@ p {
 /* Default Link Styles */
 a:link,
 a:visited,
+a:active,
 a:hover,
 a:focus {
   text-decoration: none;

@@ -1,4 +1,14 @@
+/* General Layout Rules */
 .container {
   max-width: 144rem;
   margin: 0 auto;
+
+  &-inner {
+    max-width: 100%;
+    margin: 0 var(--space-x-lg);
+  }
+}
+
+section {
+  margin-bottom: var(--space-y-lg);
 }
