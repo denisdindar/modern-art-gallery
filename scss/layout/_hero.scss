@@ -1,15 +1,10 @@
 /* Section: Hero */
 .hero {
-  width: 100%;
+  @include flex($justify: center);
+  position: relative;
   min-height: 80rem;
+  @include inner-container;
   background: linear-gradient(90deg, $color-black 50%, transparent 0%);
-
-  &-inner {
-    @include flex($placeContent: center);
-    position: relative;
-    max-width: 100%;
-    margin: 0 var(--space-x-lg);
-  }
 
   &-image {
     max-width: 54rem;
@@ -17,9 +12,9 @@
 
   &-content {
     @include flex($justify: space-between);
-    position: absolute;
-    width: 100%;
-    margin-top: 19rem;
+    @include pos(absolute);
+    width: 111rem;
+    padding-top: 19rem;
   }
 
   &-title {
@@ -31,6 +26,7 @@
   }
 
   &-caption {
+    @include flex(column, $gap: 6rem);
     max-width: 35rem;
   }
 }

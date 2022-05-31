@@ -2,20 +2,20 @@
 /* Button Component */
 
 .btn {
-  display: block;
+  display: inline-block;
   position: relative;
   @include font($font-heading, 800, 2rem, 0.37rem);
   background-color: $color-black;
   color: $color-white;
   text-transform: uppercase;
   padding: 2.6rem 3.2rem;
-  margin-top: 6rem;
   cursor: pointer;
   transition: background-color 0.35s;
+  backface-visibility: hidden;
 
   &::after {
     @include pseudo($w: 0.8rem, $h: 2.4rem, $t: 0, $r: -5.6rem);
-    content: url(../../images/icon-arrow-right.svg);
+    content: url(../images/icon-arrow-right.svg);
     background-color: $color-primary;
     padding: 2.6rem 2.4rem;
     transition: background-color 0.35s;
@@ -26,6 +26,35 @@
 
     &::after {
       background-color: $color-black;
+    }
+  }
+
+  &--sm {
+    display: inline-block;
+    max-width: 15rem;
+    font-size: 1.8rem;
+    padding: 1.2rem 1.2rem;
+    border: 2px solid $color-black;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $color-black;
+      border: 2px solid $color-black;
+    }
+  }
+
+  &-subscribe {
+    padding: 2rem 3.2rem;
+    border: 2px solid transparent;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-black;
+      border: 2px solid $color-black;
     }
   }
 }

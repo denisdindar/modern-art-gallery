@@ -1,12 +1,12 @@
 /* General Layout Rules */
 .container {
+  @include pos(relative);
   max-width: 144rem;
   margin: 0 auto;
+}
 
-  &-inner {
-    max-width: 100%;
-    margin: 0 var(--space-x-lg);
-  }
+main {
+  max-width: 100%;
 }
 
 section {

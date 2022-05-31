@@ -1,8 +1,10 @@
 /* Section: Gallery */
 .gallery {
   --gap: 3rem;
-  width: calc(100% - var(--gap));
   @include flex($justify: space-between, $wrap: wrap, $gap: var(--gap));
+  max-width: calc(100% - var(--gap));
+  @include inner-container;
+  margin-bottom: var(--space-y-lg);
 
   &-box-white {
     @include flex(column, $justify: center, $gap: 3.2rem);
@@ -22,7 +24,7 @@
 
   &-box-rb {
     @include flex(column, $justify: space-between);
-    max-width: calc(44.5rem - var(--gap));
+    max-width: 44.5rem;
   }
 
   &-img-1,

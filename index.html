@@ -19,60 +19,81 @@
     />
 
     <!-- Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
 
     <title>Modern Art Gallery</title>
   </head>
   <body>
     <div class="container">
+      <!-- HEADER and NAVIGATION -->
+      <header class="header">
+        <!-- 1. Burger Toggle Menu -->
+        <input type="checkbox" class="nav-checkbox" id="toggle-menu" />
+        <label for="toggle-menu" class="nav-button">
+          <div class="nav-icon"></div>
+        </label>
+
+        <nav class="nav">
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">about</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">gallery</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">events</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">location</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
       <!-- HERO SECTION -->
       <section class="hero">
-        <div class="hero-inner">
-          <img
-            class="hero-image"
-            alt="modern art gallery"
-            srcset="
-              images/mobile/image-hero.jpg   480w,
-              images/tablet/image-hero.jpg   720w,
-              images/desktop/image-hero.jpg 1280w
-            "
-            src="./images/desktop/image-hero.jpg"
-          />
-          <div class="hero-content">
-            <h1 class="hero-title heading-xl">
-              modern
-              <br />
-              art gallery
-            </h1>
-            <div class="hero-caption">
-              <p>
-                The arts in the collection of the Modern Art Gallery all started
-                from a spark of inspiration. Will these pieces inspire you?
-                Visit us and find out...
-              </p>
-              <a href="#location">
-                <button type="button" class="btn">our location</button>
-              </a>
-            </div>
+        <img
+          class="hero-image"
+          alt="modern art gallery"
+          srcset="
+            images/mobile/image-hero.jpg   480w,
+            images/tablet/image-hero.jpg   720w,
+            images/desktop/image-hero.jpg 1280w
+          "
+          src="./images/desktop/image-hero.jpg"
+        />
+        <div class="hero-content">
+          <h1 class="hero-title heading-xl">
+            modern
+            <br />
+            art gallery
+          </h1>
+          <div class="hero-caption">
+            <p>
+              The arts in the collection of the Modern Art Gallery all started
+              from a spark of inspiration. Will these pieces inspire you? Visit
+              us and find out...
+            </p>
+            <a href="#location">
+              <button type="button" class="btn">our location</button>
+            </a>
           </div>
         </div>
       </section>
+
       <main>
-        <div class="container-inner">
-          <!-- GALLERY SECTION -->
-          <section class="gallery">
-            <!-- 1. Heading and text in white space -->
-            <div class="gallery-box-white">
-              <h2 class="heading-md">Your Day at the Gallery</h2>
-              <p>
-                Wander through our distinct collections and find new insights
-                about our artists. Dive into the details of their creative
-                process.
-              </p>
-            </div>
-            <!-- 2. First image on right -->
+        <!-- GALLERY SECTION -->
+        <section class="gallery">
+          <!-- 1. Heading and text in white space -->
+          <div class="gallery-box-white">
+            <h2 class="heading-md">Your Day at the Gallery</h2>
+            <p>
+              Wander through our distinct collections and find new insights
+              about our artists. Dive into the details of their creative
+              process.
+            </p>
+          </div>
+          <!-- 2. First image on right -->
+          <div class="gallery-img-1">
             <img
-              class="gallery-img-1"
               alt="a view of art gallery"
               srcset="
                 images/mobile/image-grid-1.jpg   480w,
@@ -81,9 +102,10 @@
               "
               src="./images/desktop/image-grid-1.jpg"
             />
-            <!-- 3. Second vertical image on left bottom -->
+          </div>
+          <!-- 3. Second vertical image on left bottom -->
+          <div class="gallery-img-2">
             <img
-              class="gallery-img-2"
               alt="a view of art gallery"
               srcset="
                 images/mobile/image-grid-2.jpg   480w,
@@ -92,12 +114,13 @@
               "
               src="./images/desktop/image-grid-2.jpg"
             />
+          </div>
 
-            <!-- 4. Right Block Container with vertical image and text -->
-            <div class="gallery-box-rb">
-              <!-- 4.1 Image -->
+          <!-- 4. Right Block Container with vertical image and text -->
+          <div class="gallery-box-rb">
+            <!-- 4.1 Image -->
+            <div class="gallery-img-3">
               <img
-                class="gallery-img-3"
                 alt="a view of art gallery"
                 srcset="
                   images/mobile/image-grid-3.jpg   480w,
@@ -106,28 +129,194 @@
                 "
                 src="./images/desktop/image-grid-3.jpg"
               />
-              <!-- 4.2 Black Text Box -->
-              <div class="gallery-box-black">
-                <h2 class="heading-md">Come & Be Inspired</h2>
-                <p>
-                  We’re excited to welcome you to our gallery and see how our
-                  collections influence you.
-                </p>
-              </div>
             </div>
-          </section>
-        </div>
-        <!-- GOOGLE MAP by Snazzy Maps -->
-        <iframe
-          src="https://snazzymaps.com/embed/395302"
-          width="100%"
-          height="400px"
-          style="border: none"
-        ></iframe>
+            <!-- 4.2 Black Text Box -->
+            <div class="gallery-box-black">
+              <h2 class="heading-md">Come & Be Inspired</h2>
+              <p>
+                We’re excited to welcome you to our gallery and see how our
+                collections influence you.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- EVENTS SLIDER SECTION -->
+        <section class="events">
+          <!-- Left Block -->
+          <div class="events-left">
+            <h3 class="heading-md">upcoming events</h3>
+
+            <ul class="events-list">
+              <li class="events-item">Richard Wollheim</li>
+              <li class="events-item">Sculpture Master</li>
+              <li class="events-item">The Work of Art</li>
+              <li class="events-item">Commercial Art</li>
+            </ul>
+          </div>
+          <!-- Slider Block -->
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="slide">
+                    <div class="slide__image slide__image--1"></div>
+                    <div class="slide__content">
+                      <h2>Richard Wollheim</h2>
+                      <p>
+                        <span>
+                          <img src="./images/icon-calendar.svg" alt="date" />
+                          17th JULY
+                        </span>
+                      </p>
+                      <p>
+                        Richard Wollheim distinguishes three approaches to
+                        assessing the aesthetic value of art: the Realist,
+                        whereby aesthetic quality is an absolute value
+                        independent of any human view.
+                      </p>
+                      <p>
+                        The arrival of Modernism in the late 19th century lead
+                        to a radical break in the conception of the function of
+                        art,
+                      </p>
+                      <button class="btn btn--sm">visit</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="slide">
+                    <div class="slide__image slide__image--2"></div>
+                    <div class="slide__content">
+                      <h2>Sculpture Master</h2>
+                      <p>
+                        <span>
+                          <img src="./images/icon-calendar.svg" alt="date" />
+                          21th JULY
+                        </span>
+                      </p>
+                      <p>
+                        Gallery proudly announces its first exhibition devoted
+                        entirely to sculpture. This carefully curated
+                        exhibition, Masters of Sculpture, will draw from the
+                        gallery’s more than 40 year collection, to display more
+                        than 150 years of Black history, from emancipation to
+                        the present day.
+                      </p>
+                      <p>
+                        In Byzantine and Medieval art of the Western Middle
+                        Ages, much art focused on the expression of subjects
+                        about Biblical and religious culture
+                      </p>
+                      <button class="btn btn--sm">visit</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="slide">
+                    <div class="slide__image slide__image--3"></div>
+                    <div class="slide__content">
+                      <h2>the Work of Art</h2>
+                      <p>
+                        <span>
+                          <img src="./images/icon-calendar.svg" alt="date" />
+                          3rd AUGUST
+                        </span>
+                      </p>
+                      <p>
+                        Renaissance art had a greatly increased emphasis on the
+                        realistic depiction of the material world, and the place
+                        of humans in it, reflected in the corporeality of the
+                        human body, and development of a systematic method of
+                        graphical perspective to depict recession in a
+                        three-dimensional picture space.
+                      </p>
+                      <p>
+                        In The Origin of the Work of Art, Martin Heidegger, a
+                        German philosopher and a seminal thinker, describes the
+                        essence of art in terms of the concepts of being and
+                        truth.
+                      </p>
+                      <button class="btn btn--sm">visit</button>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="splide__slide">
+                  <div class="slide">
+                    <div class="slide__image slide__image--4"></div>
+                    <div class="slide__content">
+                      <h2>Commerce Arts</h2>
+                      <p>
+                        <span>
+                          <img src="./images/icon-calendar.svg" alt="date" />
+                          28th FEBRUARY
+                        </span>
+                      </p>
+                      <p>
+                        Motivated purposes of art refer to intentional,
+                        conscious actions on the part of the artists or creator.
+                        These may be to bring about political change, to comment
+                        on an aspect of society, to convey a specific emotion or
+                        mood, to address personal psychology, to illustrate
+                        another discipline, to (with commercial arts) sell a
+                        product, or simply as a form of communication.
+                      </p>
+                      <p>
+                        Since ancient times, much of the finest art has
+                        represented a deliberate display of wealth or power,
+                        often achieved by using massive scale and expensive
+                        materials.
+                      </p>
+                      <button class="btn btn--sm">visit</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUBSCRIBE SECTION -->
+        <section class="subscribe">
+          <h3 class="subscribe-title heading-md">subscribe our list</h3>
+          <p class="subscribe-text">Never miss an event!</p>
+          <form name="subscribe" id="formSubscribe" action="#">
+            <div class="subscribe-form">
+              <input
+                type="email"
+                placeholder="your mail"
+                name="email"
+                class="subscribe-input"
+                required
+              />
+              <input
+                id="submit"
+                type="submit"
+                value="Join"
+                class="btn btn-subscribe"
+              />
+            </div>
+          </form>
+
+          <p class="subscribe-text-sm">
+            We will not spam, you can unsubscribe any time.
+          </p>
+        </section>
 
         <!-- LOCATION SECTION -->
         <section class="location">
-          <div class="location-inner">
+          <img
+            class="location-map"
+            alt="our location on map"
+            srcset="
+              images/mobile/image-map.png   480w,
+              images/tablet/image-map.png   720w,
+              images/desktop/image-map.png 1280w
+            "
+            src="./images/desktop/image-map.png"
+          />
+          <div class="location-block">
             <h2 class="location-title heading-md">our location</h2>
             <div class="location-adress">
               <h4 class="location-adress-street heading-sm">99 King Street</h4>
@@ -180,6 +369,7 @@
     </div>
 
     <!-- JS for mobile toggle menu -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>

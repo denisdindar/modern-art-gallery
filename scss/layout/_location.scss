@@ -1,13 +1,15 @@
 /* Section: Location */
 .location {
-  background-color: $color-black;
   margin-bottom: 0;
 
-  &-inner {
-    @include flex($justify: space-between);
+  &-map {
     max-width: 100%;
-    margin: 0 var(--space-x-lg);
-    padding: 10rem 0;
+  }
+
+  &-block {
+    @include flex($justify: space-between);
+    background-color: $color-black;
+    @include inner-container(10rem);
   }
 
   &-title {

@@ -15,10 +15,9 @@
 
 // Flexbox
 // $placeContent values: Vertical Horizontal or one value for both
-// @include flex(row, center, end) or (start end) = Right Top
 @mixin flex(
   $direction: null,
-  $placeContent: null,
+  $place: null,
   $justify: null,
   $align: null,
   $wrap: null,
@@ -27,7 +26,7 @@
   display: flex;
   flex-direction: $direction;
 
-  @if $placeContent == null {
+  @if $place == null {
     @if $justify {
       justify-content: $justify;
     }
@@ -35,7 +34,8 @@
       align-items: $align;
     }
   } @else {
-    place-content: $placeContent;
+    justify-content: $place;
+    align-items: $place;
   }
   @if $wrap {
     flex-wrap: $wrap;
@@ -65,4 +65,23 @@
   bottom: $b;
   left: $l;
   z-index: $z;
+}
+
+// Inner Container Utiliy (*)
+@mixin inner-container($vertical-space: null) {
+  max-width: 100%;
+
+  @if $vertical-space == null {
+    padding: 0 var(--space-x-lg);
+  } @else {
+    padding: $vertical-space var(--space-x-lg);
+  }
+}
+
+// Transform X and Y Positioning
+@mixin x($unit) {
+  transform: translateX($unit);
+}
+@mixin y($unit) {
+  transform: translateY($unit);
 }

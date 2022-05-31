@@ -1,0 +1,101 @@
+/* Overrides for slider */
+.splide {
+  max-width: 65%;
+
+  &__slide {
+    transition: all 0.5s ease-in-out;
+
+    &.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &.is-next,
+    &.is-prev {
+      opacity: 0.5;
+      transform: scale(0.75);
+      transform-origin: center;
+    }
+  }
+
+  &__arrows {
+    @include pos(absolute, $b: 0, $z: 9999);
+    @include x(19rem);
+  }
+
+  &__arrow {
+    background: $color-black;
+    border-radius: 0;
+    opacity: 1;
+
+    & svg {
+      fill: $color-white;
+    }
+
+    &--prev {
+      left: -3em;
+    }
+
+    &--next {
+      right: -3rem;
+    }
+  }
+
+  &__pagination {
+    // dot container
+    &__page {
+      // dot
+      &.is-active {
+        // active dot
+      }
+    }
+  }
+}
+.animate {
+  transform: translateX(50%);
+  transition: transform 3s;
+  color: orange;
+}
+
+/* Slide Items */
+.slide {
+  @include flex(row, $justify: space-between);
+  max-width: 100%;
+  min-height: 100%;
+
+  &__image {
+    min-width: 50%;
+    background-color: $color-black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 5rem;
+
+    &--1 {
+      background-image: url(../images/desktop/slide-1.jpg);
+    }
+    &--2 {
+      background-image: url(../images/desktop/slide-2.jpg);
+    }
+    &--3 {
+      background-image: url(../images/desktop/slide-3.jpg);
+    }
+    &--4 {
+      background-image: url(../images/desktop/slide-4.jpg);
+    }
+  }
+  &__content {
+    @include flex(column, $gap: 2rem);
+
+    & p {
+      @include text-sizes(1.6rem, 2.2rem);
+    }
+
+    & span {
+      @include flex($gap: 1rem);
+    }
+
+    & img {
+      width: 2rem;
+    }
+  }
+}

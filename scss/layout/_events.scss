@@ -1,0 +1,41 @@
+.events {
+  @include flex($justify: space-between);
+
+  &-left {
+    @include flex(column, $justify: space-between, $gap: 2.5rem);
+    max-width: 40rem;
+    min-height: 100%;
+    padding-left: 16.5rem;
+  }
+
+  &-item {
+    position: relative;
+    @include font($font-heading, 900);
+    color: $color-black;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+
+    &::before {
+      @include pseudo($w: 0, $h: 2px, $t: 50%, $l: 0);
+      background-color: $color-black;
+      transition: width 0.5s;
+    }
+
+    &.is-active {
+      opacity: 1;
+      font-size: 2.2rem;
+
+      &.events-item {
+        padding-left: 3rem;
+      }
+      &.events-item::before {
+        width: 2rem;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+  }
+}
