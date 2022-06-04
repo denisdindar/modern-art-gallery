@@ -394,6 +394,7 @@ header {
   grid-column: 8/13;
   grid-row: 2/3;
   height: fit-content;
+  margin-top: 50rem;
   z-index: -1;
 }
 
