@@ -392,6 +392,7 @@ header {
   background-color: black;
   color: white;
   grid-column: 8/13;
+  grid-row: 2/3;
   height: fit-content;
   z-index: -1;
 }
