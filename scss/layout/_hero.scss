@@ -1,32 +1,47 @@
 /* Section: Hero */
 .hero {
-  @include flex($justify: center);
-  position: relative;
-  min-height: 80rem;
-  @include inner-container;
-  background: linear-gradient(90deg, $color-black 50%, transparent 0%);
+  &__bg {
+    @include flex($place: center);
+    height: 100vh;
+    background: url(".././images/desktop/image-hero.jpg") no-repeat center,
+      linear-gradient(to right, $color-black 50%, $color-white 50%);
 
-  &-image {
-    max-width: 54rem;
+    @include media("<tablet") {
+      height: 50vh;
+    }
   }
-
-  &-content {
+  &__content {
+    @include pos(absolute, $t: 19rem);
     @include flex($justify: space-between);
-    @include pos(absolute);
-    width: 111rem;
-    padding-top: 19rem;
+    width: 100%;
+    padding: 0 16.5rem;
+
+    @include media("<tablet") {
+      @include pos(static);
+      @include flex(column, $gap: 3rem);
+      padding: 3rem 2rem;
+    }
   }
 
-  &-title {
+  &__title {
+    // break line after space
+    white-space: pre-line;
+    // Reverse text color depends on bg-color
     color: $color-white;
-    background: linear-gradient(90deg, $color-white 63%, $color-black 0%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    mix-blend-mode: difference;
+
+    @include media("<tablet") {
+      color: $color-black;
+      mix-blend-mode: normal;
+    }
   }
 
-  &-caption {
-    @include flex(column, $gap: 6rem);
-    max-width: 35rem;
+  &__caption {
+    @include flex(column, $gap: 4rem);
+    width: 35rem;
+
+    @include media("<tablet") {
+      width: 100%;
+    }
   }
 }

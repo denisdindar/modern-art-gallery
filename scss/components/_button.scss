@@ -1,60 +1,54 @@
-// Button Component
 /* Button Component */
-
 .btn {
-  display: inline-block;
-  position: relative;
-  @include font($font-heading, 800, 2rem, 0.37rem);
+  /* General Button Style */
+  @include flex($align: center);
+  @include text-style(
+    $font-heading,
+    $size: 2rem,
+    $letter-spacing: 0.37rem,
+    $text-transform: uppercase
+  );
   background-color: $color-black;
   color: $color-white;
-  text-transform: uppercase;
-  padding: 2.6rem 3.2rem;
   cursor: pointer;
-  transition: background-color 0.35s;
-  backface-visibility: hidden;
+  transition: background-color 0.35s, color 0.35s;
+  // disable button to strecth
+  align-self: flex-start;
 
-  &::after {
-    @include pseudo($w: 0.8rem, $h: 2.4rem, $t: 0, $r: -5.6rem);
-    content: url(../images/icon-arrow-right.svg);
-    background-color: $color-primary;
-    padding: 2.6rem 2.4rem;
-    transition: background-color 0.35s;
-  }
-
+  /* Button Hover States */
   &:hover {
     background-color: $color-primary;
+    color: $color-black;
 
-    &::after {
+    & .btn--icon path {
+      stroke: $color-black;
+    }
+  }
+
+  /* Button Variants */
+  /* Button Primary */
+  &--primary {
+    padding: 1.2rem 2.6rem;
+  }
+
+  /* Button Submit */
+  &--submit {
+    padding: 1.2rem 2.6rem;
+
+    &:hover {
       background-color: $color-black;
+      color: $color-primary;
     }
   }
 
+  /* Button with icon */
+  &--icon {
+    margin-left: 2rem;
+  }
+
+  /* Button small */
   &--sm {
-    display: inline-block;
-    max-width: 15rem;
-    font-size: 1.8rem;
-    padding: 1.2rem 1.2rem;
-    border: 2px solid $color-black;
-
-    &::after {
-      display: none;
-    }
-
-    &:hover {
-      background-color: transparent;
-      color: $color-black;
-      border: 2px solid $color-black;
-    }
-  }
-
-  &-subscribe {
-    padding: 2rem 3.2rem;
-    border: 2px solid transparent;
-
-    &:hover {
-      background-color: $color-primary;
-      color: $color-black;
-      border: 2px solid $color-black;
-    }
+    @include text-style($size: 1.6rem);
+    padding: 0.8rem 1.6rem;
   }
 }

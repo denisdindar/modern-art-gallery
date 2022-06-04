@@ -3,6 +3,10 @@
   @include pos(relative);
   max-width: 144rem;
   margin: 0 auto;
+
+  @include media("<tablet") {
+    max-width: 100%;
+  }
 }
 
 main {
@@ -10,5 +14,9 @@ main {
 }
 
 section {
-  margin-bottom: var(--space-y-lg);
+  margin-bottom: 6rem;
+
+  @include media("<tablet") {
+    margin-bottom: 4rem;
+  }
 }

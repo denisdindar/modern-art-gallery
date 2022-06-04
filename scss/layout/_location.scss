@@ -10,11 +10,20 @@
     @include flex($justify: space-between);
     background-color: $color-black;
     @include inner-container(10rem);
+
+    @include media("<tablet") {
+      @include flex(column);
+      padding: var(--space-y-md) var(--space-x-sm);
+    }
   }
 
   &-title {
     max-width: 30rem;
     color: $color-white;
+
+    @include media("<tablet") {
+      max-width: 100%;
+    }
   }
 
   &-adress {

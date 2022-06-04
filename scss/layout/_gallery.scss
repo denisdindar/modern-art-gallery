@@ -1,34 +1,110 @@
 /* Section: Gallery */
+
+// 1. 12 column 3 row, fit by template
+// 2. Separate up and down blocks and use grid again
+// 3. Leave default Flexbox
+
 .gallery {
-  --gap: 3rem;
-  @include flex($justify: space-between, $wrap: wrap, $gap: var(--gap));
-  max-width: calc(100% - var(--gap));
-  @include inner-container;
-  margin-bottom: var(--space-y-lg);
+  width: 100%;
+  padding: 0 16.5rem;
+  display: grid;
+  grid-template-columns: repeat(12, 6.5rem);
+  gap: 3rem;
+  // grid-template-rows: auto auto minmax(0px, auto) auto;
 
-  &-box-white {
-    @include flex(column, $justify: center, $gap: 3.2rem);
-    max-width: 35rem;
-  }
+  &__item {
+    &--1 {
+      background-color: white;
+      grid-column: 1 / 6;
+      // grid-row: 1 / 2;
+      // max-width: 35rem;
+    }
+    &--2 {
+      grid-column: 6 / 13;
+      // grid-row: 1 / 2;
+    }
+    &--3 {
+      grid-column: 1 / 8;
+    }
 
-  &-box-black {
-    @include flex(column, $gap: 3.2rem);
-    background-color: $color-black;
-    color: $color-white;
-    padding: 6.5rem 4.8rem;
+    &--4 {
+      grid-column: 8 / 13;
+      grid-row: 2 / 3;
+    }
 
-    & h2 {
-      color: $color-white;
+    &--5 {
+      background-color: black;
+      color: white;
+
+      grid-column: 8 / 13;
+      // grid-row: 2 /3;
+      height: fit-content;
+      // margin-top: 50rem;
+
+      z-index: -1;
     }
   }
-
-  &-box-rb {
-    @include flex(column, $justify: space-between);
-    max-width: 44.5rem;
-  }
-
-  &-img-1,
-  &-img-2 {
-    max-width: 63.5rem;
-  }
 }
+
+// .gallery {
+//   @include flex($justify: space-between, $wrap: wrap, $gap: 3rem);
+//   width: 100%;
+//   padding: 0 16.5rem;
+//   margin-bottom: var(--space-y-lg);
+
+//   @include media("<tablet") {
+//     @include flex(column, $gap: 2rem);
+//     max-width: 100%;
+//     padding: 0 var(--space-x-sm);
+//     margin-bottom: var(--space-y-md);
+//   }
+
+//   &-box-white {
+//     @include flex(column, $justify: center, $gap: 3.2rem);
+//     max-width: 35rem;
+
+//     @include media("<tablet") {
+//       max-width: 100%;
+//     }
+//   }
+
+//   &-box-black {
+//     @include flex(column);
+//     background-color: $color-black;
+//     color: $color-white;
+//     padding: 6.5rem 4.8rem;
+
+//     @include media("<tablet") {
+//       width: 100%;
+//     }
+
+//     & h2 {
+//       color: $color-white;
+//     }
+//   }
+
+//   &-box-rb {
+//     @include flex(column, $justify: space-between, $gap: 3.2rem);
+//     max-width: 44.5rem;
+
+//     @include media("<tablet") {
+//       width: 100%;
+//       gap: 3.2rem;
+//     }
+//   }
+
+//   &-img-1,
+//   &-img-2 {
+//     max-width: 63.5rem;
+
+//     @include media("<tablet") {
+//       width: 100%;
+//     }
+//   }
+
+//   &-img-1 {
+//     @include media("<tablet") {
+//       order: -1;
+//     }
+//   }
+// }

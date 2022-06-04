@@ -7,35 +7,80 @@
   line-height: $line-height;
 }
 
-// Custom text sizes
+// Custom text sizes // will be deleted
 @mixin text-sizes($font-size, $line-height) {
   font-size: $font-size;
   line-height: $line-height;
 }
 
+@mixin text-size($size: null, $w: null, $letter: null, $line: null, $tt: null) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $w {
+    font-weight: $w;
+  }
+  @if $letter {
+    letter-spacing: $letter;
+  }
+  @if $line {
+    line-height: $line;
+  }
+  @if $line {
+    line-height: $line;
+  }
+  @if $tt {
+    text-transform: $tt;
+  }
+}
+// delete above after all
+
+// New Text property
+// General text-styles without font param.
+// Use it when there is no font attached or custom text styles
+@mixin text-style(
+  $family: null,
+  $size: null,
+  $weight: null,
+  $letter-spacing: null,
+  $line-height: null,
+  $text-transform: null
+) {
+  @if $family {
+    font-family: $family;
+  }
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+  @if $line-height {
+    line-height: $line-height;
+  }
+  @if $text-transform {
+    text-transform: $text-transform;
+  }
+}
+
 // Flexbox
 // $placeContent values: Vertical Horizontal or one value for both
-@mixin flex(
-  $direction: null,
-  $place: null,
-  $justify: null,
-  $align: null,
-  $wrap: null,
-  $gap: null
-) {
+@mixin flex($direction: null, $place: null, $justify: null, $align: null, $wrap: null, $gap: null) {
   display: flex;
   flex-direction: $direction;
 
-  @if $place == null {
-    @if $justify {
-      justify-content: $justify;
-    }
-    @if $align {
-      align-items: $align;
-    }
-  } @else {
-    justify-content: $place;
-    align-items: $place;
+  @if $place == center {
+    justify-content: center;
+    align-items: center;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
   }
   @if $wrap {
     flex-wrap: $wrap;

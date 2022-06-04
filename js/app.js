@@ -2,10 +2,10 @@
 
 // 1.Subscribe Button (prevent default for demo)
 // Avoid form submit on click
-let btnSubscribe = document.querySelector(".btn-subscribe");
-btnSubscribe.addEventListener("click", (e) => {
-  e.preventDefault();
-});
+// let btnSubmit = document.querySelector(".btn--submit");
+// btnSubmit.addEventListener("click", (e) => {
+//   e.preventDefault();
+// });
 
 // // 2. Toggle Menu
 // // Open and close buttons
@@ -30,10 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
     interval: 5000,
     wheel: false,
     releaseWheel: true,
-    // height: "60vh",
-    cover: true,
+    height: "60vh",
+    cover: false,
     padding: { right: "25rem" },
     updateOnMove: true,
+    breakpoints: {
+      640: {
+        padding: { right: "10rem" },
+      },
+    },
   });
 
   // Animate on Slide

@@ -1,9 +1,13 @@
 /* Footer */
 footer {
-  @include flex(row, space-between);
+  @include flex(row, $justify: space-between);
   background-color: $color-primary;
   max-width: 100%;
-  padding: 8rem 16.5rem;
+  padding: 8rem 3.6rem;
+
+  @include media("<tablet") {
+    @include flex(column, $justify: center, $gap: 3rem);
+  }
 }
 
 .footer {
@@ -14,6 +18,9 @@ footer {
   &-info {
     max-width: 43rem;
     color: $color-black;
+    @include media("<tablet") {
+      max-width: 100%;
+    }
   }
   &-social {
     @include flex($align: baseline, $gap: 1.2rem);

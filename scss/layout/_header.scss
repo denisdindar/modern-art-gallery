@@ -1,3 +1,7 @@
 header {
-  @include pos(absolute, $t: 3.2rem, $r: 16.5rem, $z: 9999);
+  @include pos(absolute, $t: 3.2rem, $r: 4rem, $z: 9999);
+
+  @include media("<tablet") {
+    right: 6rem;
+  }
 }
